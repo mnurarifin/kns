@@ -1,0 +1,404 @@
+* * * * * /usr/bin/php /var/www/html/kimstella/kimstella-public/public/index.php cron/network/activation
+1 0 * * * /usr/bin/php /var/www/html/kimstella/kimstella-public/public/index.php cron/network/generate-network-code
+6 0 * * * /usr/bin/php /var/www/html/kimstella/kimstella-public/public/index.php cron/bonus/calculate-bonus-daily
+11 0 * * * /usr/bin/php /var/www/html/kimstella/kimstella-public/public/index.php cron/common/delete-member-otp-expired
+16 0 1 1 * /usr/bin/php /var/www/html/kimstella/kimstella-public/public/index.php cron/tax/reinit_tax_member
+
+php74 public/index.php cron/recap/recap-network-sponsor
+php74 public/index.php cron/recap/recap-network-upline
+php74 public/index.php cron/recap/recap-power-leg
+php74 public/index.php cron/recap/recap-matching-leg
+
+ALTER TABLE `sys_reward_point_log` CHANGE `reward_point_type` `reward_point_log_type` ENUM('in','out') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL, CHANGE `reward_point_value` `reward_point_log_value` INT UNSIGNED NOT NULL DEFAULT '0', CHANGE `reward_point_note` `reward_point_log_note` MEDIUMTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL, CHANGE `reward_point_datetime` `reward_point_log_datetime` DATETIME NOT NULL;
+ALTER TABLE `sys_reward_trip_point_log` CHANGE `reward_point_type` `reward_point_log_type` ENUM('in','out') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL, CHANGE `reward_point_value` `reward_point_log_value` INT UNSIGNED NOT NULL DEFAULT '0', CHANGE `reward_point_note` `reward_point_log_note` MEDIUMTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL, CHANGE `reward_point_datetime` `reward_point_log_datetime` DATETIME NOT NULL;
+
+ALTER TABLE `sys_netgrow_sponsor` ADD `netgrow_sponsor_point` INT NOT NULL DEFAULT '0' AFTER `netgrow_sponsor_bonus`;
+ALTER TABLE `sys_netgrow_gen_node` ADD `netgrow_gen_node_point` INT NOT NULL DEFAULT '0' AFTER `netgrow_gen_node_bonus`;
+ALTER TABLE `sys_netgrow_power_leg` ADD `netgrow_power_leg_point` INT NOT NULL DEFAULT '0' AFTER `netgrow_power_leg_bonus`;
+ALTER TABLE `sys_netgrow_matching_leg` ADD `netgrow_matching_leg_point` INT NOT NULL DEFAULT '0' AFTER `netgrow_matching_leg_bonus`;
+
+UPDATE sys_netgrow_gen_node SET netgrow_gen_node_point = 1;
+UPDATE sys_netgrow_power_leg SET netgrow_power_leg_point = 2;
+UPDATE sys_netgrow_matching_leg SET netgrow_matching_leg_point = 1;
+
+-- REKAP PLACEMENT
+
+START TRANSACTION;
+UPDATE kimstella_dbase.sys_netgrow_sponsor SET netgrow_sponsor_downline_leg_position=2 WHERE netgrow_sponsor_id=7;
+
+INSERT INTO kimstella_dbase.sys_netgrow_gen_node (netgrow_gen_node_member_id,netgrow_gen_node_line_member_id,netgrow_gen_node_trigger_member_id,netgrow_gen_node_level,netgrow_gen_node_bonus,netgrow_gen_node_point,netgrow_gen_node_date,netgrow_gen_node_datetime)
+	VALUES (3,7,8,2,7000,1,'2023-02-16','2023-02-16 17:43:01.000');
+
+INSERT INTO kimstella_dbase.sys_netgrow_gen_node (netgrow_gen_node_member_id,netgrow_gen_node_line_member_id,netgrow_gen_node_trigger_member_id,netgrow_gen_node_level,netgrow_gen_node_bonus,netgrow_gen_node_point,netgrow_gen_node_date,netgrow_gen_node_datetime)
+	VALUES (1,3,8,3,7000,1,'2023-02-16','2023-02-16 17:43:01.000');
+
+UPDATE kimstella_dbase.sys_netgrow_gen_node
+	SET netgrow_gen_node_member_id=7
+	WHERE netgrow_gen_node_id=8;
+
+UPDATE kimstella_dbase.sys_network
+	SET network_upline_member_id=7,network_upline_leg_position=1,network_sponsor_leg_position=2,network_upline_network_code='KNS1000007'
+	WHERE network_member_id=8;
+
+UPDATE kimstella_dbase.sys_network_sponsor
+	SET network_sponsor_arr_data='[{"level":1,"id":1,"pos":2}]'
+	WHERE network_sponsor_member_id=8;
+--  Auto-generated SQL script #202302161905
+UPDATE kimstella_dbase.sys_network_upline
+	SET network_upline_arr_data='[{"level":1,"id":7,"pos":1},{"level":2,"id":3,"pos":1},{"level":3,"id":1,"pos":2}]'
+	WHERE network_upline_member_id=8;
+--  Auto-generated SQL script #202302161908
+INSERT INTO kimstella_dbase.sys_netgrow_node (netgrow_node_member_id,netgrow_node_downline_member_id,netgrow_node_downline_leg_position,netgrow_node_point,netgrow_node_level,netgrow_node_date,netgrow_node_datetime)
+	VALUES (3,8,1,0.0,2,'2023-02-16','2023-02-16 17:43:01.000');
+INSERT INTO kimstella_dbase.sys_netgrow_node (netgrow_node_member_id,netgrow_node_downline_member_id,netgrow_node_downline_leg_position,netgrow_node_point,netgrow_node_level,netgrow_node_date,netgrow_node_datetime)
+	VALUES (1,8,2,0.0,3,'2023-02-16','2023-02-16 17:43:01.000');
+UPDATE kimstella_dbase.sys_netgrow_node
+	SET netgrow_node_member_id=7,netgrow_node_downline_leg_position=1
+	WHERE netgrow_node_id=8;
+--  Auto-generated SQL script #202302161917
+UPDATE kimstella_dbase.sys_netgrow_power_leg
+	SET netgrow_power_leg_line_leg_position=2
+	WHERE netgrow_power_leg_id=5;
+--  Auto-generated SQL script #202302161912
+UPDATE kimstella_dbase.sys_netgrow_power_leg
+	SET netgrow_power_leg_line_leg_position=2
+	WHERE netgrow_power_leg_id=6;
+--  Auto-generated SQL script #202302161923
+UPDATE kimstella_dbase.sys_network
+	SET network_code='KNS1000008'
+	WHERE network_member_id=8;
+COMMIT;
+
+-- REKAP PLACEMENT
+
+START TRANSACTION;
+--  Auto-generated SQL script #202302161857
+UPDATE kimstella_dbase.sys_netgrow_sponsor
+	SET netgrow_sponsor_downline_leg_position=6
+	WHERE netgrow_sponsor_id=12;
+--  Auto-generated SQL script #202302171509
+INSERT INTO kimstella_dbase.sys_netgrow_node (netgrow_node_member_id,netgrow_node_downline_member_id,netgrow_node_downline_leg_position,netgrow_node_point,netgrow_node_level,netgrow_node_date,netgrow_node_datetime)
+	VALUES (1,13,6,0.0,2,'2023-02-17','2023-02-17 14:01:01.000');
+UPDATE kimstella_dbase.sys_netgrow_node
+	SET netgrow_node_downline_leg_position=1,netgrow_node_member_id=10
+	WHERE netgrow_node_id=18;
+--  Auto-generated SQL script #202302161902
+--  Auto-generated SQL script #202302171510
+UPDATE kimstella_dbase.sys_network
+	SET network_upline_member_id=10,network_upline_leg_position=1,network_sponsor_leg_position=6,network_upline_network_code='KNS1000010'
+	WHERE network_member_id=13;
+--  Auto-generated SQL script #202302161904
+--  Auto-generated SQL script #202302171510
+UPDATE kimstella_dbase.sys_network_sponsor
+	SET network_sponsor_arr_data='[{"level":1,"id":1,"pos":6}]'
+	WHERE network_sponsor_member_id=13;
+--  Auto-generated SQL script #202302161905
+--  Auto-generated SQL script #202302171511
+UPDATE kimstella_dbase.sys_network_upline
+	SET network_upline_arr_data='[{"level":1,"id":10,"pos":1},{"level":2,"id":1,"pos":6}]'
+	WHERE network_upline_member_id=13;
+--  Auto-generated SQL script #202302161908
+--  Auto-generated SQL script #202302171513
+INSERT INTO kimstella_dbase.sys_netgrow_gen_node (netgrow_gen_node_member_id,netgrow_gen_node_line_member_id,netgrow_gen_node_trigger_member_id,netgrow_gen_node_level,netgrow_gen_node_bonus,netgrow_gen_node_point,netgrow_gen_node_date,netgrow_gen_node_datetime)
+	VALUES (1,10,13,2,7000,1,'2023-02-17','2023-02-17 14:01:01.000');
+UPDATE kimstella_dbase.sys_netgrow_gen_node
+	SET netgrow_gen_node_member_id=10
+	WHERE netgrow_gen_node_id=18;
+--  Auto-generated SQL script #202302161917
+--  Auto-generated SQL script #202302171514
+UPDATE kimstella_dbase.sys_netgrow_power_leg
+	SET netgrow_power_leg_line_leg_position=6,netgrow_power_leg_line_member_id=10
+	WHERE netgrow_power_leg_id=11;
+COMMIT;
+
+INSERT INTO `sys_reward_qualified` (`reward_qualified_id`, `reward_qualified_member_id`, `reward_qualified_reward_id`, `reward_qualified_reward_title`, `reward_qualified_reward_value`, `reward_qualified_condition_sponsor`, `reward_qualified_condition_point_left`, `reward_qualified_condition_point_right`, `reward_qualified_condition_point`, `reward_qualified_condition_rank_id`, `reward_qualified_datetime`, `reward_qualified_status`, `reward_qualified_status_administrator_id`, `reward_qualified_status_datetime`, `reward_qualified_claim`, `reward_qualified_claim_datetime`) VALUES (NULL, '111', '1', 'START UP', '200000', '0', '0.000', '0.000', '60.000', '1', '2023-03-01 00:06:02', 'approved', '0', '2023-03-01 00:06:02', 'claimed', '2023-03-01 00:06:02')
+INSERT INTO `sys_reward_trip_point_log` (`reward_point_log_id`, `reward_point_log_member_id`, `reward_point_log_type`, `reward_point_log_value`, `reward_point_log_note`, `reward_point_log_datetime`) VALUES (NULL, '111', 'in', '0', 'Reward Trip dari START UP', '2023-03-01 00:06:02')
+
+8jt setelah mensponsori ke 5, masuk mensponsori ke 6
+limit total untuk 1 (misal 2 berarti 10 per akun)
+jika sisa limit kurang dari siap transfer
+rekap bonus_limit
+update limit saat cloning dan sponsoring
+
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=590;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=591;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=592;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=593;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=594;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=595;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=596;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=597;
+DELETE FROM kimstella_dbase.sys_bonus_transfer WHERE bonus_transfer_id=598;
+
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=150000,bonus_power_leg_paid=120000,bonus_gen_node_paid=44000 WHERE bonus_member_id=393;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=100000,bonus_power_leg_paid=40000,bonus_gen_node_paid=34000 WHERE bonus_member_id=426;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=100000,bonus_power_leg_paid=40000,bonus_gen_node_paid=20000 WHERE bonus_member_id=428;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=250000,bonus_power_leg_paid=200000,bonus_gen_node_paid=95000 WHERE bonus_member_id=429;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=50000,bonus_gen_node_paid=10000 WHERE bonus_member_id=436;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=50000,bonus_gen_node_paid=24000 WHERE bonus_member_id=453;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=50000,bonus_gen_node_paid=10000 WHERE bonus_member_id=455;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=50000,bonus_gen_node_paid=17000 WHERE bonus_member_id=482;
+UPDATE kimstella_dbase.sys_bonus SET bonus_sponsor_paid=50000,bonus_gen_node_paid=10000 WHERE bonus_member_id=483;
+--  Auto-generated SQL script #202303151047
+DELETE FROM kimstella_dbase.sys_bonus_transfer
+	WHERE bonus_transfer_id=533;
+DELETE FROM kimstella_dbase.sys_bonus_transfer
+	WHERE bonus_transfer_id=534;
+
+
+select * from (SELECT bonus_member_id, bonus_limit, total, (case when total is null then 5000000 when total > 5 then 8000000 + 8000000 * total else 5000000 + 5000000 * total end) as final FROM sys_bonus join sys_member on member_id = bonus_member_id left join (select netgrow_sponsor_member_id, count(*) as total from sys_netgrow_sponsor group by netgrow_sponsor_member_id) t on netgrow_sponsor_member_id = member_parent_member_id) t2 where bonus_limit <> final;
+select * from sys_bonus where (bonus_sponsor_paid + bonus_gen_node_paid + bonus_power_leg_paid + bonus_matching_leg_paid) > bonus_limit;
+
+INSERT INTO sys_member_registration
+(member_registration_id, member_name, member_email, member_mobilephone, member_gender, member_birth_place, member_birth_date, member_address, member_subdistrict_id, member_city_id, member_province_id, member_country_id, member_bank_id, member_bank_name, member_bank_account_name, member_bank_account_no, member_bank_city, member_bank_branch, member_identity_type, member_identity_no, member_identity_image, member_tax_no, member_tax_image, member_mother_name, member_devisor_name, member_devisor_relation, member_devisor_mobilephone, member_registration_username, member_registration_password, member_registration_sponsor_username, member_registration_product_package_id, member_registration_datetime, member_registration_status, member_registration_status_datetime, member_registration_transaction_type, member_registration_transaction_id, member_id, member_is_network, member_network_slug)
+VALUES(479, 'Hj. Sitti Hania', 'hj.hania71@gmail.com', '+6285242077891', '', NULL, NULL, 'Ulu Tedong
+Jl. Briptu Suherman
+Kel. Maccorawalie
+Kec. Wattang Sawitto
+Pinrang ', 5041, 360, 28, 0, 2, 'Bank Mandiri', 'Hj. Sitti Hania', '1520007008457', NULL, '', 'KTP', '7315044105710004', 'undefined', '', NULL, NULL, NULL, NULL, '', '', '$2y$10$WRZ8znOmSVk7KCjcoy9Sh.5MMHuqYSkB2ijddeRwNTrXEKbDecoF.', 'KNS1000297', 0, '2023-03-24 12:32:10.000', 'requested', '2023-03-24 12:32:10.000', 'warehouse', 307, 0, 0, 'Srikandi');
+
+
+rekap placement
+- backup sys_network
+- update sys_network.network_sponsor_leg_position
+- update sys_network.network_upline_member_id
+- update sys_network.network_upline_network_code
+- update sys_network.network_upline_leg_position
+
+- backup sys_netgrow_node
+- update sys_netgrow_node.netgrow_node_downline_leg_position
+- update sys_netgrow_node.netgrow_node_level
+- insert level 1
+
+- backup sys_netgrow_gen_node
+# jika data = 9 jika tidak langsung insert
+- delete 
+- insert
+- update sys_netgrow_gen_node.netgrow_gen_node_level
+- update sys_netgrow_gen_node.netgrow_gen_node_bonus
+
+
+-- REKAP PLACEMENT
+
+START TRANSACTION;
+UPDATE kimstella_dbase.sys_network
+	SET network_upline_member_id=452,network_sponsor_leg_position=2,network_upline_network_code='KNS1000261-3',network_upline_leg_position=1
+	WHERE network_member_id=661;
+INSERT INTO kimstella_dbase.sys_netgrow_node (netgrow_node_member_id,netgrow_node_downline_member_id,netgrow_node_downline_leg_position,netgrow_node_point,netgrow_node_level,netgrow_node_date,netgrow_node_datetime)
+	VALUES (452,661,1,0.0,1,'2023-03-28','2023-03-28 12:52:01.000');
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=2,netgrow_node_downline_leg_position=2 WHERE netgrow_node_id=4795;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=3 WHERE netgrow_node_id=4796;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=4 WHERE netgrow_node_id=4797;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=5 WHERE netgrow_node_id=4798;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=6 WHERE netgrow_node_id=4799;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=7 WHERE netgrow_node_id=4800;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=8 WHERE netgrow_node_id=4801;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=9 WHERE netgrow_node_id=4802;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=10 WHERE netgrow_node_id=4803;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=11 WHERE netgrow_node_id=4804;
+
+DELETE FROM kimstella_dbase.sys_netgrow_gen_node WHERE netgrow_gen_node_id=4461;
+INSERT INTO kimstella_dbase.sys_netgrow_gen_node (netgrow_gen_node_member_id,netgrow_gen_node_line_member_id,netgrow_gen_node_trigger_member_id,netgrow_gen_node_level,netgrow_gen_node_bonus,netgrow_gen_node_point,netgrow_gen_node_date,netgrow_gen_node_datetime)
+	VALUES (452,450,661,1,10000,1,'2023-03-28','2023-03-28 12:52:01.000');
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=2,netgrow_gen_node_bonus=7000 WHERE netgrow_gen_node_id=4453;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=3 WHERE netgrow_gen_node_id=4454;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=4 WHERE netgrow_gen_node_id=4455;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=5 WHERE netgrow_gen_node_id=4456;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=6 WHERE netgrow_gen_node_id=4457;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=7 WHERE netgrow_gen_node_id=4458;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=8 WHERE netgrow_gen_node_id=4459;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=9 WHERE netgrow_gen_node_id=4460;
+
+UPDATE kimstella_dbase.sys_netgrow_sponsor SET netgrow_sponsor_member_id=450,netgrow_sponsor_downline_leg_position=2 WHERE netgrow_sponsor_id=660;
+
+UPDATE kimstella_dbase.sys_network_upline
+	SET network_upline_arr_data='[{"level":1,"id":452,"pos":1},{"level":2,"id":450,"pos":2},{"level":3,"id":393,"pos":2},{"level":4,"id":354,"pos":1},{"level":5,"id":353,"pos":1},{"level":6,"id":344,"pos":1},{"level":7,"id":338,"pos":1},{"level":8,"id":291,"pos":2},{"level":9,"id":239,"pos":1},{"level":10,"id":2,"pos":1},{"level":11,"id":1,"pos":1}]'
+	WHERE network_upline_member_id=661;
+
+UPDATE kimstella_dbase.sys_network_sponsor
+	SET network_sponsor_arr_data='[{"level":1,"id":452,"pos":1},{"level":2,"id":450,"pos":2},{"level":3,"id":393,"pos":2},{"level":4,"id":354,"pos":1},{"level":5,"id":353,"pos":1},{"level":6,"id":344,"pos":1},{"level":7,"id":338,"pos":1},{"level":8,"id":291,"pos":2},{"level":9,"id":239,"pos":1},{"level":11,"id":1,"pos":1}]'
+	WHERE network_sponsor_member_id=661;
+	
+UPDATE kimstella_dbase.sys_netgrow_power_leg SET netgrow_power_leg_line_leg_position=2 WHERE netgrow_power_leg_id=657;
+COMMIT;
+
+
+-- REKAP PLACEMENT 20230401
+
+START TRANSACTION;
+UPDATE kimstella_dbase.sys_network
+	SET network_upline_member_id=20,network_sponsor_leg_position=21,network_upline_network_code='KNS1000020',network_upline_leg_position=1
+	WHERE network_member_id=710;
+INSERT INTO kimstella_dbase.sys_netgrow_node (netgrow_node_member_id,netgrow_node_downline_member_id,netgrow_node_downline_leg_position,netgrow_node_point,netgrow_node_level,netgrow_node_date,netgrow_node_datetime)
+	VALUES (20,710,1,0.0,1,'2023-04-01','2023-04-01 18:28:01.000');
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=2,netgrow_node_downline_leg_position=1 WHERE netgrow_node_id=5246;
+UPDATE kimstella_dbase.sys_netgrow_node SET netgrow_node_level=3 WHERE netgrow_node_id=5247;
+
+INSERT INTO kimstella_dbase.sys_netgrow_gen_node (netgrow_gen_node_member_id,netgrow_gen_node_line_member_id,netgrow_gen_node_trigger_member_id,netgrow_gen_node_level,netgrow_gen_node_bonus,netgrow_gen_node_point,netgrow_gen_node_date,netgrow_gen_node_datetime)
+	VALUES (20,710,710,1,10000,1,'2023-04-01','2023-04-01 18:28:01.000');
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=2,netgrow_gen_node_line_member_id=20,netgrow_gen_node_bonus=7000 WHERE netgrow_gen_node_id=4836;
+UPDATE kimstella_dbase.sys_netgrow_gen_node SET netgrow_gen_node_level=3 WHERE netgrow_gen_node_id=4837;
+
+UPDATE kimstella_dbase.sys_netgrow_sponsor SET netgrow_sponsor_downline_leg_position=1 WHERE netgrow_sponsor_id=709;
+
+UPDATE kimstella_dbase.sys_network_upline
+	SET network_upline_arr_data='[{"level":1,"id":20,"pos":1},{"level":2,"id":11,"pos":1},{"level":3,"id":1,"pos":7}]'
+	WHERE network_upline_member_id=710;
+
+UPDATE kimstella_dbase.sys_network_sponsor
+	SET network_sponsor_arr_data='[{"level":1,"id":11,"pos":1},{"level":2,"id":1,"pos":7}]'
+	WHERE network_sponsor_member_id=710;
+
+UPDATE kimstella_dbase.sys_netgrow_power_leg SET netgrow_power_leg_member_id=1,netgrow_power_leg_line_leg_position=7 WHERE netgrow_power_leg_id=706;
+COMMIT;
+
+
+-- REKAP PLACEMENT 20230507
+-- KNS1000771 1102 -> KNS1000377 591
+
+START TRANSACTION;
+UPDATE kimstella_dbase.sys_network
+	SET
+		network_upline_member_id=591,
+		network_upline_network_code='KNS1000377',
+		network_upline_leg_position=1,
+		network_sponsor_member_id=591,
+		network_sponsor_network_code='KNS1000377',
+		network_sponsor_leg_position=1
+	WHERE network_member_id=1102;
+
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '5' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 1 AND netgrow_node_downline_member_id = 1102;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '4' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 571 AND netgrow_node_downline_member_id = 1102;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '3', netgrow_node_downline_leg_position = 1 WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 574 AND netgrow_node_downline_member_id = 1102;
+INSERT INTO `sys_netgrow_node`
+	(`netgrow_node_id`, `netgrow_node_member_id`, `netgrow_node_downline_member_id`, `netgrow_node_downline_leg_position`, `netgrow_node_point`, `netgrow_node_level`, `netgrow_node_date`, `netgrow_node_datetime`)
+VALUES
+	(NULL, '575', '1102', '1', '0.000', '2', '2023-05-06', '2023-05-06 23:18:20');
+INSERT INTO `sys_netgrow_node`
+	(`netgrow_node_id`, `netgrow_node_member_id`, `netgrow_node_downline_member_id`, `netgrow_node_downline_leg_position`, `netgrow_node_point`, `netgrow_node_level`, `netgrow_node_date`, `netgrow_node_datetime`)
+VALUES
+	(NULL, '591', '1102', '1', '0.000', '1', '2023-05-06', '2023-05-06 23:18:20');
+
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '5' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 1 AND netgrow_gen_node_trigger_member_id = 1102;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '4' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 571 AND netgrow_gen_node_trigger_member_id = 1102;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '3', netgrow_gen_node_line_member_id = 575, netgrow_gen_node_bonus = 7000
+WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 574 AND netgrow_gen_node_trigger_member_id = 1102;
+INSERT INTO
+	`sys_netgrow_gen_node` (`netgrow_gen_node_id`, `netgrow_gen_node_member_id`, `netgrow_gen_node_line_member_id`, `netgrow_gen_node_trigger_member_id`, `netgrow_gen_node_level`, `netgrow_gen_node_bonus`, `netgrow_gen_node_point`, `netgrow_gen_node_date`, `netgrow_gen_node_datetime`)
+VALUES
+	(NULL, '575', '591', '1102', '2', '7000', '1', '2023-05-06', '2023-05-06 23:18:20');
+INSERT INTO
+	`sys_netgrow_gen_node` (`netgrow_gen_node_id`, `netgrow_gen_node_member_id`, `netgrow_gen_node_line_member_id`, `netgrow_gen_node_trigger_member_id`, `netgrow_gen_node_level`, `netgrow_gen_node_bonus`, `netgrow_gen_node_point`, `netgrow_gen_node_date`, `netgrow_gen_node_datetime`)
+VALUES
+	(NULL, '591', '1102', '1102', '1', '10000', '1', '2023-05-06', '2023-05-06 23:18:20');
+
+UPDATE `sys_netgrow_sponsor` SET `netgrow_sponsor_member_id` = '591', netgrow_sponsor_downline_leg_position = 1 WHERE `sys_netgrow_sponsor`.`netgrow_sponsor_downline_member_id` = 1102;
+
+UPDATE kimstella_dbase.sys_network_upline
+	SET network_upline_arr_data='[{"level":1,"id":591,"pos":1},{"level":2,"id":575,"pos":1}{"level":3,"id":574,"pos":1},{"level":4,"id":571,"pos":1},{"level":5,"id":1,"pos":13}]'
+	WHERE network_upline_member_id=1102;	
+
+UPDATE kimstella_dbase.sys_network_sponsor
+	SET network_sponsor_arr_data='[{"level":1,"id":591,"pos":1},{"level":2,"id":575,"pos":1},{"level":3,"id":574,"pos":1},{"level":2,"id":1,"pos":13}]'
+	WHERE network_sponsor_member_id=1102;
+
+UPDATE `sys_netgrow_power_leg` SET `netgrow_power_leg_line_leg_position` = '1', netgrow_power_leg_member_id=591 WHERE `sys_netgrow_power_leg`.`netgrow_power_leg_trigger_member_id` = 1102;
+
+UPDATE `sys_bonus_log` SET `bonus_log_gen_node` = '7000', `bonus_log_sponsor` = '0' WHERE `sys_bonus_log`.`bonus_log_member_id` = 574 AND bonus_log_date = '2023-05-06';
+INSERT INTO `sys_bonus_log` (`bonus_log_id`, `bonus_log_member_id`, `bonus_log_sponsor`, `bonus_log_gen_node`, `bonus_log_power_leg`, `bonus_log_matching_leg`, `bonus_log_cash_reward`, `bonus_log_date`, `bonus_log_datetime`) VALUES
+(NULL, '575', '0', '7000', '0', '0', '0', '2023-05-06', '2023-05-06 00:00:00');
+INSERT INTO `sys_bonus_log` (`bonus_log_id`, `bonus_log_member_id`, `bonus_log_sponsor`, `bonus_log_gen_node`, `bonus_log_power_leg`, `bonus_log_matching_leg`, `bonus_log_cash_reward`, `bonus_log_date`, `bonus_log_datetime`) VALUES
+(NULL, '591', '0', '10000', '40000', '0', '0', '2023-05-06', '2023-05-06 00:00:00');
+
+update sys_bonus set bonus_gen_node_acc = bonus_gen_node_acc - 3000, bonus_sponsor_acc = bonus_sponsor_acc - 50000, bonus_power_leg_acc = bonus_power_leg_acc - 40000 where bonus_member_id = 574;
+update sys_bonus set bonus_gen_node_acc = bonus_gen_node_acc + 7000 where bonus_member_id = 575;
+update sys_bonus set bonus_gen_node_acc = bonus_gen_node_acc + 10000, bonus_power_leg_acc = bonus_power_leg_acc + 40000 where bonus_member_id = 591;
+
+COMMIT;
+
+KNS1000362
+sponsor - 50000 (pindah sponsor ke KNS1000377)
+gen - 3000 (pindah level dari level 1 (10000) ke level 3 (7000))
+power leg - 40000 (pindah upline ke KNS1000377)
+
+KNS1000363
+gen + 7000 (level 2)
+
+KNS1000377
+sponsor + 50000 (pindah sponsor dari KNS1000362)
+gen + 10000 (level 1)
+power leg + 40000 (pindah upline dari KNS1000362)
+
+
+-- REKAP PLACEMENT 20230629
+-- KNS1001520 2147
+-- KNS1000903 1298 -> KNS1001038 1532
+
+START TRANSACTION;
+UPDATE kimstella_dbase.sys_network
+	SET
+		network_upline_member_id=1532,
+		network_upline_network_code='KNS1001038',
+		network_upline_leg_position=3,
+		network_sponsor_leg_position=4
+	WHERE network_member_id=2147;
+
+INSERT INTO `sys_netgrow_node`
+	(`netgrow_node_id`, `netgrow_node_member_id`, `netgrow_node_downline_member_id`, `netgrow_node_downline_leg_position`, `netgrow_node_point`, `netgrow_node_level`, `netgrow_node_date`, `netgrow_node_datetime`)
+VALUES
+	(NULL, '1532', '2147', '3', '0.000', '1', '2023-06-29', '2023-06-29 12:07:01');
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '2', netgrow_node_downline_leg_position = 4 WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 1298 AND netgrow_node_downline_member_id = 2147;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '3' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 556 AND netgrow_node_downline_member_id = 2147;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '4' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 520 AND netgrow_node_downline_member_id = 2147;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '5' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 512 AND netgrow_node_downline_member_id = 2147;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '6' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 493 AND netgrow_node_downline_member_id = 2147;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '7' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 11 AND netgrow_node_downline_member_id = 2147;
+UPDATE `sys_netgrow_node` SET `netgrow_node_level` = '8' WHERE `sys_netgrow_node`.`netgrow_node_member_id` = 1 AND netgrow_node_downline_member_id = 2147;
+
+INSERT INTO
+	`sys_netgrow_gen_node` (`netgrow_gen_node_id`, `netgrow_gen_node_member_id`, `netgrow_gen_node_line_member_id`, `netgrow_gen_node_trigger_member_id`, `netgrow_gen_node_level`, `netgrow_gen_node_bonus`, `netgrow_gen_node_point`, `netgrow_gen_node_date`, `netgrow_gen_node_datetime`)
+VALUES
+	(NULL, '1532', '2147', '2147', '1', '10000', '1', '2023-06-29', '2023-06-29 12:07:01');
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '2', netgrow_gen_node_line_member_id = 1532, netgrow_gen_node_bonus = 7000 WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 1298 AND netgrow_gen_node_trigger_member_id = 2147;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '3' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 556 AND netgrow_gen_node_trigger_member_id = 2147;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '4' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 520 AND netgrow_gen_node_trigger_member_id = 2147;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '5' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 512 AND netgrow_gen_node_trigger_member_id = 2147;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '6' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 493 AND netgrow_gen_node_trigger_member_id = 2147;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '7' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 11 AND netgrow_gen_node_trigger_member_id = 2147;
+UPDATE `sys_netgrow_gen_node` SET `netgrow_gen_node_level` = '8' WHERE `sys_netgrow_gen_node`.`netgrow_gen_node_member_id` = 1 AND netgrow_gen_node_trigger_member_id = 2147;
+
+UPDATE `sys_netgrow_sponsor` SET netgrow_sponsor_downline_leg_position = 4 WHERE `sys_netgrow_sponsor`.`netgrow_sponsor_downline_member_id` = 2147;
+
+UPDATE kimstella_dbase.sys_network_upline
+	SET network_upline_arr_data='[{"level":1,"id":1532,"pos":3},{"level":2,"id":1298,"pos":4},{"level":3,"id":556,"pos":1},{"level":4,"id":520,"pos":3},{"level":5,"id":512,"pos":2},{"level":6,"id":493,"pos":2},{"level":7,"id":11,"pos":6},{"level":8,"id":1,"pos":7}]'
+	WHERE network_upline_member_id=2147;	
+
+UPDATE `sys_netgrow_power_leg` SET `netgrow_power_leg_line_leg_position` = '3', netgrow_power_leg_member_id=1532 WHERE `sys_netgrow_power_leg`.`netgrow_power_leg_trigger_member_id` = 2147;
+
+COMMIT;
+
+
+UPDATE inv_stockist_transaction JOIN (SELECT * FROM sys_member_registration WHERE member_registration_transaction_type = 'stockist') regist ON regist.member_registration_transaction_id = stockist_transaction_id SET stockist_transaction_buyer_member_id = regist.member_id;
+UPDATE inv_warehouse_transaction JOIN (SELECT * FROM sys_member_registration WHERE member_registration_transaction_type = 'warehouse') regist ON regist.member_registration_transaction_id = warehouse_transaction_id SET warehouse_transaction_buyer_member_id = regist.member_id;
+
+select * from inv_stockist_transaction JOIN (SELECT * FROM sys_member_registration WHERE member_registration_transaction_type = 'stockist') regist ON regist.member_registration_transaction_id = stockist_transaction_id where stockist_transaction_buyer_member_id != regist.member_id;
+select * from inv_warehouse_transaction JOIN (SELECT * FROM sys_member_registration WHERE member_registration_transaction_type = 'warehouse') regist ON regist.member_registration_transaction_id = warehouse_transaction_id where warehouse_transaction_buyer_member_id != regist.member_id;
+
+
+973 Saldo dari transaksi mitra TRX/ST/20230602/0001
+972 Saldo dari transaksi mitra TRX/ST/20230602/0002
+971
+384 Saldo dari transaksi mitra TRX/ST/20230409/0010
+365 Saldo dari transaksi mitra TRX/ST/20230408/0001
+364 Saldo dari transaksi mitra TRX/ST/20230408/0002
+363 Saldo dari transaksi mitra TRX/ST/20230408/0003
+348 Saldo dari transaksi mitra TRX/AC/20230330/0003
+347 Saldo dari transaksi mitra TRX/ST/20230403/0012
+346 Saldo dari transaksi mitra TRX/ST/20230404/0001
+
+
+
+
+SELECT * FROM `sys_network` where network_sponsor_leg_position = 0;
+SELECT * FROM `sys_netgrow_sponsor` where netgrow_sponsor_downline_leg_position = 0;
+SELECT * FROM `sys_network_sponsor` where network_sponsor_arr_data like '%"pos":0%';

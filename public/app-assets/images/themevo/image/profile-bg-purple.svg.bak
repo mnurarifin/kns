@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="262" height="191.278" viewBox="0 0 262 191.278">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#882de7"/>
+      <stop offset="1" stop-color="#882de7"/>
+    </linearGradient>
+    <filter id="Intersection_17" x="0" y="0" width="262" height="191.278" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Intersection_16" x="0" y="0" width="262" height="176.303" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="eklusif1" transform="translate(-1073 -190)">
+    <g transform="matrix(1, 0, 0, 1, 1073, 190)" filter="url(#Intersection_17)">
+      <path id="Intersection_17-2" data-name="Intersection 17" d="M122.817,197.173c-30.6-1.627-33.746-7.616-69.3-24.68C18.112,155.5.144,161.165,0,161.211V34A10,10,0,0,1,10,24H234a10,10,0,0,1,10,10V153.513c-4.482.972-24.857,5.857-49.02,19-15.185,8.261-39.34,24.763-68.188,24.762Q124.82,197.278,122.817,197.173Z" transform="translate(9 -18)" fill="url(#linear-gradient)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1073, 190)" filter="url(#Intersection_16)">
+      <path id="Intersection_16-2" data-name="Intersection 16" d="M189,175.88c-27.024-14.49-29.56-35.824-66.182-36.745-30.632-.771-26.487,20.216-62.267,36.793C27.013,191.465.177,173.211,0,173.09V29a5,5,0,0,1,5-5H239a5,5,0,0,1,5,5V172.713a54.542,54.542,0,0,1-30.31,9.59A51.7,51.7,0,0,1,189,175.88Z" transform="translate(9 -18)" fill="#882de7" opacity="0.5"/>
+    </g>
+  </g>
+</svg>

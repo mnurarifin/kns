@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="15px" viewBox="0 0 11 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>italic</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.447059 0 0 0 0 0.494118 0 0 0 0 0.549020 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="5a.-buat-pesan" transform="translate(-1213.000000, -586.000000)">
+            <g id="Group-12" transform="translate(302.000000, 166.000000)">
+                <g id="Group-21" transform="translate(20.000000, 85.000000)">
+                    <g id="italic" transform="translate(864.000000, 335.000000)" filter="url(#filter-1)">
+                        <g transform="translate(27.303558, 0.000080)">
+                            <polygon id="Path" fill="#000000" fill-rule="nonzero" points="4.33108374 0 3.65445813 2.66009852 5.17086207 2.66009852 2.17366995 12.2660099 0.669679803 12.2660099 0 15 6.40167488 15 7.07135468 12.2660099 5.45704433 12.2660099 8.44477833 2.66009852 9.89504926 2.66009852 10.5716749 0"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

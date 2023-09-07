@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1018px"
+	 height="471px" viewBox="0 0 1018 471" enable-background="new 0 0 1018 471" xml:space="preserve">
+<g id="Layer_1" display="none">
+	<title>Untitled</title>
+	<g id="Page-1" display="inline">
+		<g id="ma">
+			
+				<image overflow="visible" enable-background="new    " width="375" height="812" xlink:href="A634A8A5.png"  transform="matrix(1.493905e-008 1.2528 -1.2527 1.493851e-008 1017.207 -9.765625e-004)">
+			</image>
+		</g>
+		<g id="Rectangle-2740" transform="translate(1.000000, 0.000000)">
+			<g id="Group">
+				
+					<linearGradient id="Rectangle_2740-2_1_" gradientUnits="userSpaceOnUse" x1="203.3403" y1="631.7988" x2="203.3403" y2="630.7988" gradientTransform="matrix(2.880008e-014 470.341 1016.805 -6.226135e-014 -641400.25 -95404.0547)">
+					<stop  offset="0" style="stop-color:#5628B4"/>
+					<stop  offset="1" style="stop-color:#684DEC"/>
+				</linearGradient>
+				<rect id="Rectangle_2740-2" x="0.005" fill="url(#Rectangle_2740-2_1_)" width="1016.805" height="470.341"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Layer_2">
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="901.1816" y1="71.2739" x2="580.8385" y2="205.4176">
+		<stop  offset="0" style="stop-color:#007233"/>
+		<stop  offset="1" style="stop-color:#028B43"/>
+	</linearGradient>
+	<rect fill="url(#SVGID_1_)" stroke="#028B43" stroke-miterlimit="10" width="1018" height="471"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2044.6807" y1="549.2734" x2="1724.3376" y2="683.4171">
+		<stop  offset="0" style="stop-color:#007233"/>
+		<stop  offset="1" style="stop-color:#028B43"/>
+	</linearGradient>
+	<rect x="1143.5" y="478" fill="url(#SVGID_2_)" stroke="#028B43" stroke-miterlimit="10" width="1018" height="471"/>
+</g>
+</svg>

@@ -1,0 +1,768 @@
+/*CUSTOM TABLE*/
+:root {
+  --primary: #6184d8;
+  --primary-lg: #6184d8;
+  --secondary: #8caeff;
+  --success: #39da8a;
+  --info: #17cfdd;
+  --warning: #fdac41;
+  --danger: #ff5b5c;
+  --secondbtn: #f6ebff;
+  --sidebar: #fdfaff;
+  --base: #fdfaff;
+  --white: white;
+  --border-r: #ebf1ff;
+  /* --genealogi-bg: url(../images/blue/geneology-card.svg); */
+  --profile-card: url(../../images/blue/profile-bg-purple.svg);
+  --bg-login: url(../images/blue/bg.svg);
+}
+
+.bg-grey-light {
+  background: #f5f5f5 !important;
+}
+
+/* ::-webkit-scrollbar:horizontal {
+  width: 10px;
+}
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondbtn);
+} */
+
+.rounded-lg {
+  border-radius: 8px !important;
+}
+
+.btn-xs {
+  padding: 4px 8px;
+  height: auto;
+  min-height: unset;
+  line-height: normal;
+  font-size: 0.75rem;
+}
+
+.card .table-responsive .table-bordered.cstm-table {
+  border-top: 0px solid transparent;
+}
+
+.cstm-table {
+  border-collapse: separate;
+  border-spacing: 0px 5px;
+}
+
+.cstm-table-head tr th {
+  border-bottom: 1px solid lightgray;
+}
+
+.cstm-table td {
+  vertical-align: middle;
+}
+
+.cstm-table thead tr th,
+.cstm-table tr td {
+  font-size: 12px;
+}
+
+.cstm-table tr td:nth-child(1) {
+  border-left: 1px solid transparent;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.cstm-table tr td:nth-last-child(1) {
+  border-right: 1px solid transparent;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.cstm-table tr td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;*/
+}
+
+.cstm-table tr[class*='-add-class'] td:nth-child(1) {
+  border-left: 1px solid #4bad00;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.cstm-table tr[class*='-add-class'] td:nth-last-child(1) {
+  border-right: 1px solid #4bad00;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.cstm-table tr[class*='-add-class'] td {
+  background-color: #ccdbde;
+  border-top: 1px solid #4bad00;
+  border-bottom: 1px solid #4bad00;
+}
+
+.cstm-table tr:hover td:nth-child(1) {
+  border-left: 1px solid #4bad00;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.cstm-table tr:hover td:nth-last-child(1) {
+  border-right: 1px solid #4bad00;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.cstm-table tr:hover td {
+  border-top: 1px solid #4bad00;
+  border-bottom: 1px solid #4bad00;
+}
+
+/*CUSTOM TABLE End*/
+
+.main-menu.menu-light {
+  color: #727E8C;
+  background: #FFF;
+  border: #DFE3E7;
+}
+
+.main-menu.menu-light .navigation {
+  background: #FFF;
+}
+
+
+/* Custom Table data Lib */
+.table {
+  position: relative;
+}
+
+.table-responsive {
+  max-height: calc(100vh - 175px);
+}
+
+.table th,
+.table td {
+  padding: 0.85rem 1rem;
+  white-space: nowrap;
+}
+
+th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+.cstm-table tr td {
+  border-top: 1px solid #DFE3E7;
+  border-bottom: 1px solid #DFE3E7;
+}
+
+.card .table-responsive .table-bordered.cstm-table {
+  border: 0;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border-right: 0;
+  border-left: 0;
+}
+
+.table-bordered tr::first-child th,
+.table-bordered tr::first-child td {
+  border-right: 0;
+}
+
+.table-bordered .cstm-table-head tr th:last-child {
+  /* border-right: 1px solid #DFE3E7!important; */
+}
+
+.table-bordered .cstm-table-head tr th:first-child {
+  /* border-left: 1px solid #DFE3E7!important; */
+}
+
+.table-bordered .cstm-table-head tr th {
+  background: #EFF3F6 !important;
+  border: 0 !important;
+  z-index: 99;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr:last-child:hover td {
+  border: 0;
+  border-bottom: 0 !important;
+  border-top: 0 !important;
+}
+
+#table-menu .btn.btn-sm.btn-icon {
+  padding: 0.4rem 0.6rem !important;
+}
+
+#table-menu .table-menu-count-data {
+  margin-left: 30px !important;
+  font-size: 12px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+.table tbody tr:hover {
+  z-index: 1000;
+  box-shadow: 0 1px 15px rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 6%) !important;
+}
+
+.table tbody tr:hover td,
+.table tbody tr:nth-child(even):hover td {
+  background: #6c9efa !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  color: #fff !important;
+}
+
+.table tbody tr:hover td .bx,
+.table tbody tr:nth-child(even):hover td .bx {
+  color: #fff !important;
+}
+
+.table tbody tr td {
+  border: 0 !important;
+}
+
+.table tbody tr:nth-child(even) td {
+  background: #F4F8F9 !important;
+}
+
+.card-container tbody .cstm-table tr:last-child:hover td {
+  border-bottom: 0;
+}
+
+.card-container tbody .cstm-table tr td .btn:hover span {
+  color: #fff !important;
+}
+
+.card-container tr {
+  margin: 1rem 0;
+}
+
+.card-container .row:nth-child(2) .d-flex {
+  align-items: center;
+}
+
+.card-container .row .d-flex>.form-group {
+  margin-bottom: 0;
+}
+
+.card-container .row .d-flex>span {
+  display: flex;
+  align-items: center;
+  margin-left: 25px !important;
+}
+
+.card-container {
+  /* border: initial;
+  background: #fff;
+  border-radius: calc(.15rem - 1px);
+  box-shadow: 0 1px 15px rgb(0 0 0 / 4%), 0 1px 6px rgb(0 0 0 / 4%)!important;
+  border-radius: .75rem; */
+  background: transparent !important;
+}
+
+.card-container .cstm-table {
+  margin-bottom: 0;
+}
+
+.card-container .card-header,
+.card-container .card-body {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+
+.card-container tr {
+  margin: 1.5rem 0;
+}
+
+.card-container .table-bordered .cstm-table-head tr th {
+  background: #ddd !important;
+}
+
+.card-container .table-bordered tbody tr td {
+  background: #fff !important;
+  padding: 1rem 1rem;
+}
+
+.card-container .table tbody tr:hover td,
+.card-container .table tbody tr:nth-child(even):hover td {
+  /* background: #6c9efa!important;  */
+  background: #39DA8A !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  color: #fff !important;
+}
+
+/* end Custom Table */
+
+/*GENEALOGI*/
+.rounded-form input {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.rounded-form button {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.chart-genealogi td {
+  text-align: center;
+}
+
+.node {
+  height: 225px;
+  width: 135px;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 5px;
+  font-size: 8pt;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  /*background-image: url(../image/genelogi_ngisor_4.png);*/
+  position: relative;
+}
+
+.node:hover {
+  -webkit-animation: swing 1s ease;
+  animation: swing 1s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.node-image {
+  height: 90px;
+  margin-top: 10px;
+}
+
+.all-node {
+  background-image: var(--genealogi-bg);
+  height: 230px;
+  background-color: transparent;
+  border-radius: 15px;
+  background-size: contain;
+  background-position: bottom;
+  overflow: hidden;
+  position: relative;
+}
+
+.all-node::before {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 20%;
+  left: 0;
+  content: '';
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ededed+51,ffffff+100 */
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #ededed 51%, #ffffff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #ededed 51%, #ffffff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #ededed 51%, #ffffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+  /* IE6-9 */
+
+}
+
+.all-node>div.user-detail,
+.all-node>a,
+.all-node>p {
+  position: relative;
+  font-weight: bold;
+}
+
+.all-node-height {
+  height: 230px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.ap-node {
+  background-image: var(--genealogi-bg);
+  height: 190px;
+  border-radius: 15px;
+}
+
+.ap-node .expand-chart {
+  bottom: -5px;
+}
+
+.nl-node {
+  background-image: var(--genealogi-bg);
+  height: 190px;
+  border-radius: 15px;
+}
+
+.nl-node .expand-chart {
+  bottom: -5px;
+}
+
+.sl-node {
+  background-image: var(--genealogi-bg);
+  height: 190px;
+  border-radius: 15px;
+}
+
+.sl-node .expand-chart {
+  bottom: -5px;
+}
+
+.ml-node {
+  background-image: var(--genealogi-bg);
+  height: 190px;
+  border-radius: 15px;
+}
+
+.ml-node .expand-chart {
+  bottom: -5px;
+}
+
+.empty-node {
+  background-image: var(--genealogi-bg);
+  filter: grayscale(1);
+  height: 230px;
+  background-color: transparent;
+  border-radius: 15px;
+  background-size: contain;
+  background-position: bottom;
+}
+
+.bag-count {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.bag-count p {
+  margin-top: 2px;
+  font-weight: 100;
+}
+
+.chart-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 100;
+  font-weight: bolder;
+}
+
+.chart-value p {
+  margin-top: 2px;
+  width: 40%;
+}
+
+.chart-value img {
+  width: 10%;
+}
+
+.expand-chart {
+  background: white;
+  width: 20px;
+  position: absolute;
+  left: 43%;
+  bottom: -4px;
+  border-radius: 50%;
+}
+
+.chart-line {
+  height: 20px;
+  width: 4px;
+}
+
+.chart-genealogi .table-responsive {
+  overflow-y: hidden;
+}
+
+.chart-genealogi .down {
+  background-color: #bfbdc2;
+  margin: 20px auto 45px;
+  width: 70px;
+  box-shadow: 0px 5px 15px 4px #848484;
+  height: 0px;
+}
+
+.chart-genealogi .left {
+  border-right: 1px dashed gray;
+}
+
+.chart-genealogi .right {
+  border-left: 2px dashed gray;
+}
+
+.chart-genealogi .top {
+  border-top: 2px dashed gray;
+}
+
+.chart-genealogi .node-empty {
+  filter: grayscale(1);
+}
+
+.node-filled:hover .node-hover {
+  display: block;
+}
+
+.node-hover {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: -265px;
+  padding: 10px 15px;
+}
+
+.node-hover td {
+  text-align: left;
+}
+
+.node-hover .left-info {
+  text-align: left;
+  min-width: 120px;
+}
+
+.chart-genealogi .body-genealogi {
+  min-width: 0;
+}
+
+.node-image img {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  background-color: white;
+}
+
+.hexa {
+  width: 85px;
+  background: var(--primary);
+  -webkit-clip-path: polygon(75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 25% 10%);
+  clip-path: polygon(75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 25% 10%);
+}
+
+/*.hexa img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}*/
+.hexa img {
+  width: 63%;
+  height: 38%;
+  object-fit: scale-down;
+  clip-path: polygon(75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 25% 10%);
+  position: absolute;
+  left: 24px;
+  top: 16px;
+}
+
+.nodata-genealogy {
+  min-height: calc(100vh - 265px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@-webkit-keyframes swing {
+  15% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+
+  30% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  50% {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+
+  65% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+  80% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes swing {
+  15% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+
+  30% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  50% {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+
+  65% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+  80% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/*GENEaLOGI End*/
+
+.ui-autocomplete-loading {
+  background: white url('../images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+
+.breadcrumb {
+  background-color: transparent !important;
+}
+
+.breadcrumb .breadcrumb-item span {
+  color: #596F88;
+}
+
+.breadcrumb .breadcrumb-item a {
+  color: #5A8DEE;
+}
+
+#response-message-password ul,
+#response-error-password ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.dtable-action.btn-icon .ficon {
+  margin-right: 6px !important;
+}
+
+.btn-icon>span {
+  color: #333 !important;
+}
+
+.btn-icon:hover>span {
+  color: #fff !important;
+}
+
+.pagination .page-item .page-link {
+  font-weight: 400;
+  border-left: 1px solid #DFE3E7;
+  border-right: 1px solid #DFE3E7;
+  margin: 0 2px;
+}
+
+.pagination .page-item.active .page-link {
+  font-weight: 600;
+}
+
+body.menu-expanded .logo-expanded {
+  display: block !important;
+}
+
+body.menu-expanded .logo-collapsed {
+  display: none !important;
+}
+
+body.menu-collapsed .logo-collapsed {
+  display: block !important;
+}
+
+body.menu-collapsed .logo-expanded {
+  display: none !important;
+}
+
+body.menu-collapsed .expanded .logo-expanded {
+  display: block !important;
+}
+
+body.menu-collapsed .expanded .logo-collapsed {
+  display: none !important;
+}
+
+.logo {
+  transition: width 0ms 400ms;
+}
+
+body.pace-running #main-menu-navigation .menu-livicon {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.pace-done #main-menu-navigation .menu-livicon {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+body.pace-running #main-menu-navigation .menu-title {
+  padding-left: 40px;
+}
+
+body.pace-running #main-menu-navigation .menu-title:before {
+  font-family: boxicons !important;
+  font-size: 24px;
+  color: #ddd;
+  display: inline-block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 12px;
+  top: 4px;
+  transition: -webkit-transform 0.4s ease-in-out;
+  content: "\ea97";
+}
+
+.modal-body {
+  max-height: calc(100vh - 200px);
+}
+
+.cstmHover:hover {
+  cursor: pointer;
+}
+
+.btnExcel {
+  background-color: red;
+}

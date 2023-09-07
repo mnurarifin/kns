@@ -1,0 +1,1415 @@
+html body .content.app-content {
+  background: url('../images/card-bg-2.jpg') center center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+}
+
+html body .content.app-content.app-login {
+  background: #222;
+  position: relative;
+}
+
+html .pace .pace-progress {
+  background: #222;
+}
+
+.d-md-table-row-group {
+  display: table-row-group!important;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+}
+
+.content.app-content:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.content.app-content div {
+  z-index: 10;
+}
+
+.cl-primary,
+.text-primary,
+.primary {
+  color: #6f2abb !important;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-dark {
+  color: #666;
+}
+
+.btn-success {
+  border: 1px solid #028B43;
+  background-color: #028B43;
+  color: #fff !important;
+}
+
+.btn-success:hover,
+.btn-success.hover {
+  background-color: #157347 !important;
+  border: 1px solid #157347;
+  color: #fff !important;
+}
+
+.btn-outline-success {
+  border: 1px solid #028B43;
+  background-color: transparent;
+  color: #028B43 !important;
+}
+
+.btn-outline-success:hover,
+.btn-outline-success.hover {
+  background-color: #028B43 !important;
+  color: #fff !important;
+}
+
+
+.btn-login,
+.btn-primary {
+  background-color: #6f2abb !important;
+  border-color: #6f2abb !important;
+  font-weight: bold;
+}
+
+.btn-login:hover,
+.btn-login:focus .btn-primary:hover,
+.btn-primary:focus {
+  background-color: #6f2abb !important;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  color: #6f2abb !important;
+  background-color: transparent !important;
+  border-color: #6f2abb !important;
+}
+
+.btn-outline-primary:hover {
+  color: #FFFFFF !important;
+  background-color: #6f2abb !important;
+  border-color: #6f2abb !important;
+}
+
+.form-control:focus {
+  color: #6f2abb;
+  border-color: #6f2abb;
+}
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: -internal-light-dark(rgb(232, 254, 245), rgba(70, 126, 101, 0.4)) !important;
+  background-color: rgb(232, 254, 245) !important;
+}
+
+html body {
+  height: 100%;
+  /* background-color: #222; */
+  direction: ltr;
+}
+
+.content-header .content-header-left {
+  margin-top: 0 !important;
+}
+
+.breadcrumb {
+  background: transparent;
+}
+
+.breadcrumb-wrapper .breadcrumb .breadcrumb-item a:hover,
+.breadcrumb-wrapper .breadcrumb .breadcrumb-item a i:hover {
+  color: #6f2abb !important;
+}
+
+.breadcrumb-item.active {
+  color: #022e30;
+}
+
+.card {
+  border-radius: 0.8rem !important;
+}
+
+.input-group-merge .cursor-pointer:hover {
+  color: #00af43;
+}
+
+.app-login .content-body {
+  background-image: url(../images/bg-login.svg) !important;
+  background-position: 50% !important;
+  background-size: cover !important;
+}
+
+.wizard.vertical .content .body {
+  padding: 2.5% !important;
+}
+
+.wizard.vertical .content {
+  float: left;
+  width: 70%;
+  border: 1px solid #DFE3E7 !important;
+  border-radius: 8px;
+}
+
+.wizard .steps ul {
+  padding-right: 1.2rem !important;
+}
+
+.wizard.vertical .actions ul {
+  margin-top: 1rem;
+}
+
+.wizard .steps ul li.current a .icon-title .d-block,
+.wizard .steps ul li.done a .icon-title .d-block {
+  font-weight: bold;
+}
+
+.wizard .steps ul li.current a .icon-title .text-muted,
+.wizard .steps ul li.done a .icon-title .text-muted {
+  color: #333 !important;
+}
+
+.wizard .steps ul li.done a {
+  color: #028b43;
+}
+
+#auth-login {
+  height: calc(100vh - 45px);
+}
+
+#auth-login .bg-authentication {
+  /*border-radius: 2rem!important;*/
+  background-image: url(../images/card-bg.jpg) !important;
+  background-position: 2% !important;
+  background-size: cover !important;
+}
+
+#auth-login .login-icon {
+  background: url(../images/logo.png) no-repeat;
+  /* background-size: contain; */
+  background-size: 15rem;
+  background-position: center;
+  min-width: 2.2rem;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 2.5rem;
+}
+
+#auth-login #captcha-div {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  /*border: 1px solid #DFE3E7;*/
+}
+
+#auth-login #captcha-div #captcha {
+  background: url(../images/captcha-widget-1.png) center top repeat;
+  background-size: cover !important;
+}
+
+.login-footer {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px;
+  position: relative;
+  transition-duration: 0.2s;
+  transition-property: background-color, left, right;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-box-flex: 0 !important;
+  flex: 0 1 auto !important;
+}
+
+/* nav */
+html body.navbar-sticky .app-content .content-wrapper {
+  padding: 2.2rem 2.2rem 0;
+  margin-top: 4rem;
+}
+
+.header-navbar.fixed-top {
+  left: 260px;
+  position: fixed;
+  /* background-color: #FFF!important; */
+  background: linear-gradient(to right, #6f2abb 0, #cbb2e6 100%);
+}
+
+.main-menu .navbar-header .navbar-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  margin: 0.25rem 0;
+}
+
+.main-menu .navbar-header .navbar-brand .brand-logo {
+  height: 36px;
+  width: 100%;
+  float: none;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.main-menu .navbar-header .navbar-brand .brand-logo .logo {
+  height: 45px;
+  left: -12px;
+  display: block;
+}
+
+.main-menu .navbar-header .navbar-brand .brand-logo .logo-expanded {
+  height: 45px;
+  left: 0;
+  display: none;
+}
+
+.menu-expanded .main-menu .navbar-header .navbar-brand .brand-logo .logo,
+.main-menu .navbar-header.expanded .navbar-brand .brand-logo .logo {
+  display: none;
+}
+
+.menu-expanded .main-menu .navbar-header .navbar-brand .brand-logo .logo-expanded,
+.main-menu .navbar-header.expanded .navbar-brand .brand-logo .logo-expanded {
+  display: block;
+}
+
+.main-menu .navbar-header .navbar-brand .brand-text {
+  color: #028b43;
+  padding-left: 0;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+  font-size: 1.2rem;
+  float: none;
+  animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+}
+
+@media (max-width: 1200px) {
+  .header-navbar.fixed-top {
+    left: 0 !important;
+  }
+
+  .header-navbar .brand-text {
+    padding: 1.6rem 0.8rem 1.12rem 0;
+  }
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #6f2abb;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: #6f2abb;
+  text-decoration: none;
+  background-color: #F2F4F4;
+}
+
+.header-navbar .navbar-container ul.nav li a.dropdown-user-link .user-nav,
+.header-navbar .navbar-container ul.nav li a.dropdown-user-link .user-nav .user-status,
+.header-navbar .navbar-container ul.nav li i.ficon {
+  color: #fff !important;
+}
+
+.header-navbar .navbar-container ul.nav li a.dropdown-user-link:hover .user-nav,
+.header-navbar .navbar-container ul.nav li i.ficon:hover {
+  color: #6B581B !important;
+}
+
+.main-menu .main-menu-content {
+  padding-top: 1rem;
+}
+
+/* sidebar */
+body.vertical-layout.vertical-menu-modern.menu-expanded .main-menu,
+.main-menu ul.navigation-main {
+  background: #fff !important;
+}
+
+.main-menu.menu-light .navigation>li.active:not(.sidebar-group-active)>a {
+  background: rgb(178 145 37 / 15%);
+  color: #6f2abb;
+  border-radius: 0.267rem;
+}
+
+.main-menu.menu-light .navigation li a:hover {
+  display: flex;
+  align-items: center;
+  color: #6f2abb;
+  padding: 10px 12px;
+}
+
+.main-menu.menu-light .navigation li a:hover {
+  color: #6f2abb;
+}
+
+.main-menu.menu-light .navigation>li.nav-item.open>a i,
+.main-menu.menu-light .navigation>li.nav-item.sidebar-group-active>a i {
+  color: #6f2abb !important;
+}
+
+/* genealogy */
+.card-genealogy {
+  background: #f5f5f5;
+}
+
+.chart-genealogy {
+  transform: scale(0.8);
+  transform-origin: 40% 0% 0px;
+  overflow: visible;
+}
+
+.all-node {
+  /* background: transparent url('../images/genealogy/genealogy-card-bg.svg') center center repeat-y;
+  background-size: auto 100%; */
+  background: #fff;
+  position: relative;
+  min-height: 180px;
+  height: auto !important;
+  margin-top: 70px !important;
+  margin-bottom: 60px !important;
+  /* box-shadow: 0px -5px 20px 0 rgb(25 42 70 / 10%); */
+}
+
+.menu-node {
+  border: 1px solid #ddd !important;
+  border-bottom: 3px solid #028b43 !important;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.01), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.01), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.04), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.01) !important;
+}
+
+.chart-genealogy table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.node {
+  height: 225px;
+  width: 130px;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 5px;
+  font-size: 9pt;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.node-image {
+  height: 90px;
+  margin-top: -50px;
+  justify-content: center;
+}
+
+.hexa {
+  /* -webkit-clip-path: polygon(75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 25% 10%); */
+  /* clip-path: polygon(75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 25% 10%); */
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #b1b1b1;
+}
+
+.node-image img {
+  background-color: #ffffff;
+}
+
+.hexa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hexa img.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.node-shadow {
+  margin: 20px auto 45px;
+  width: 70px;
+  box-shadow: 0px 5px 15px 4px #848484;
+  height: 0px;
+}
+
+.chart-genealogy td {
+  text-align: center;
+}
+
+.chart-genealogy .top {
+  border-top: 2px dashed gray;
+}
+
+.chart-genealogy .left {
+  border-right: 1px dashed gray;
+}
+
+.chart-genealogy .right {
+  border-left: 2px dashed gray;
+}
+
+.chart-line {
+  height: 20px;
+  width: 4px;
+}
+
+.genealogy-name {
+  max-width: 100%;
+  max-height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.5;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 1rem;
+  font-size: 13px;
+  margin-bottom: 0.35rem;
+}
+
+.node-growth {
+  width: 100%;
+}
+
+.node-growth>div {
+  flex: 1 1 0;
+}
+
+.v-img-growth {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat !important;
+  margin: 0 auto;
+}
+
+.mobile-genealogy {
+  overflow: auto;
+}
+
+.mobile-genealogy table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mobile-genealogy .node-shadow {
+  margin: 10px auto 35px;
+  width: 70px;
+}
+
+.mobile-genealogy .node {
+  height: 225px;
+  width: 68px;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 5px;
+  font-size: 8pt;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (min-width: 381px) and (max-width: 480px) {
+  .mobile-genealogy .node {
+    width: 85px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .mobile-genealogy .node {
+    width: 100px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .mobile-genealogy .node {
+    width: 120px;
+  }
+}
+
+.mobile-genealogy .all-node {
+  height: 160px;
+  background-color: transparent;
+  border-radius: 15px;
+  background-size: contain;
+  background-position: bottom;
+  background-size: 102% auto !important;
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .mobile-genealogy .all-node {
+    background-size: 90% auto !important;
+  }
+}
+
+.mobile-genealogy .all-node .node-growth>div {
+  font-size: 6.5pt !important;
+}
+
+.mobile-genealogy .all-node .node-growth>div.px-3 {
+  padding: 0 5px !important;
+}
+
+.mobile-genealogy .all-node .node-info {
+  font-size: 7pt !important;
+  padding: 5px 0 !important;
+}
+
+.mobile-genealogy .all-node .node-info>div {
+  font-size: 7pt !important;
+}
+
+.mobile-genealogy .all-node .node-image {
+  height: 60px;
+  margin-top: -2px;
+  margin-bottom: 18px;
+}
+
+.mobile-genealogy .all-node .node-image::before {
+  top: 0px;
+  left: 2px;
+  height: 66px;
+  width: 64px;
+}
+
+.mobile-genealogy .all-node .node-image .hexa {
+  width: 60px;
+}
+
+@media (min-width: 381px) and (max-width: 480px) {
+  .mobile-genealogy .all-node .node-image {
+    margin-bottom: 0px;
+    margin-top: 5px;
+  }
+
+  .mobile-genealogy .all-node .node-image::before {
+    top: 7px;
+    left: 10px;
+    height: 66px;
+    width: 64px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .mobile-genealogy .all-node .node-image {
+    margin-bottom: 0px;
+  }
+
+  .mobile-genealogy .all-node .node-image::before {
+    top: 0px;
+    left: 18px;
+    height: 66px;
+    width: 64px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .mobile-genealogy .all-node .node-image {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .mobile-genealogy .all-node .node-image::before {
+    top: 2px;
+    left: 28px;
+    height: 66px;
+    width: 64px;
+  }
+}
+
+/* available node class */
+/* empty-node, basic-node, premium-node, business-node, vip-node, executive-node */
+
+.all-node:after {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: -66px;
+  left: 0;
+  content: '';
+  z-index: 100;
+}
+
+.all-node.empty-node:after {
+  background: url('../images/genealogy/genealogy-card-empty.svg') center center no-repeat !important;
+}
+
+.all-node {
+  border-top: 3px solid #b1b1b1;
+}
+
+.all-node:after {
+  background: url('../images/genealogy/genealogy-card-default.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.all-node .point-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  margin: 0 auto;
+  background: url('../images/genealogy/ic-node.svg') center center no-repeat !important;
+}
+
+/* .all-node .cl-primary { color: #39752b !important; }
+.menu-node { border-bottom: 5px solid #39752b !important; }
+.menu-node .cl-primary { color: #39752b !important; } */
+
+.all-node.basic-node:after {
+  background: url('../images/genealogy/genealogy-card-basic.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.all-node.basic-node .cl-primary {
+  color: #39752b !important;
+}
+
+.menu-node.basic-node {
+  border-bottom: 5px solid #39752b !important;
+}
+
+.menu-node.basic-node .cl-primary {
+  color: #39752b !important;
+}
+
+.all-node.basic-node {
+  border-top: 3px solid #39752b;
+}
+
+.all-node.basic-node .hexa {
+  border: 2px solid #39752b;
+}
+
+.all-node.premium-node:after {
+  background: url('../images/genealogy/genealogy-card-premium.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.all-node.premium-node .cl-primary {
+  color: #05294d !important;
+}
+
+.menu-node.premium-node {
+  border-bottom: 5px solid #05294d !important;
+}
+
+.menu-node.premium-node .cl-primary {
+  color: #05294d !important;
+}
+
+.all-node.premium-node {
+  border-top: 3px solid #05294d;
+}
+
+.all-node.premium-node .hexa {
+  border: 2px solid #05294d;
+}
+
+.all-node.business-node:after {
+  background: url('../images/genealogy/genealogy-card-business.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.all-node.business-node .cl-primary {
+  color: #a82624 !important;
+}
+
+.menu-node.business-node {
+  border-bottom: 5px solid #a82624 !important;
+}
+
+.menu-node.business-node .cl-primary {
+  color: #a82624 !important;
+}
+
+.all-node.business-node {
+  border-top: 3px solid #a82624;
+}
+
+.all-node.business-node .hexa {
+  border: 2px solid #a82624;
+}
+
+.all-node.vip-node:after {
+  background: url('../images/genealogy/genealogy-card-vip.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.all-node.vip-node .cl-primary {
+  color: #c77248 !important;
+}
+
+.menu-node.vip-node {
+  border-bottom: 5px solid #c77248 !important;
+}
+
+.menu-node.vip-node .cl-primary {
+  color: #c77248 !important;
+}
+
+.all-node.vip-node {
+  border-top: 3px solid #c77248;
+}
+
+.all-node.vip-node .hexa {
+  border: 2px solid #c77248;
+}
+
+.all-node.executive-node:after {
+  background: url('../images/genealogy/genealogy-card-executive.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.all-node.executive-node .cl-primary {
+  color: #c69d27 !important;
+}
+
+.menu-node.executive-node {
+  border-bottom: 5px solid #c69d27 !important;
+}
+
+.menu-node.executive-node .cl-primary {
+  color: #c69d27 !important;
+}
+
+.all-node.executive-node {
+  border-top: 3px solid #c69d27;
+}
+
+.all-node.executive-node .hexa {
+  border: 2px solid #c69d27;
+}
+
+
+.all-node.basic-node:hover,
+.all-node.gold-node:hover,
+.all-node.diamond-node:hover {
+  opacity: 1;
+}
+
+/* end og genealogy style */
+
+/* profile */
+.bg-card-profile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.bg-card-profile .v-image {
+  height: 100%;
+}
+
+.bg-card-profile .v-image .v-image__image {
+  background-position: center bottom !important;
+}
+
+/* serial */
+.badge-serial {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/* reward */
+.badge-reward {
+  padding: 10px 10px;
+  font-size: 12pt;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8rem;
+}
+
+
+/* background */
+.bg-primary {
+  background-color: #028b43 !important;
+}
+
+.bg-primary-2 {
+  background-color: #29bb89 !important;
+}
+
+.bg-primary-light {
+  background-color: rgba(0, 103, 49, 0.2) !important;
+}
+
+.bg-primary-gradient {
+  background-image: linear-gradient(to right, #29bb89, #1dd1a1);
+}
+
+.bg-main {
+  background-color: rgba(213, 230, 212, 0.3) !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.v-application.vo-mlm .primary {
+  background-color: #6f2abb !important;
+  border-color: #6f2abb !important;
+}
+
+/* color */
+.cl-primary {
+  color: #6f2abb !important;
+}
+
+.cl-primary-2 {
+  color: #29bb89 !important;
+}
+
+.cl-primary-light {
+  color: rgba(0, 103, 49, 0.2);
+}
+
+.cl-secondary {
+  color: #475f7b;
+}
+
+.cl-white {
+  color: #ffffff;
+}
+
+.cl-grey {
+  color: #707070 !important;
+}
+
+
+/* rank type color */
+.text-captain {
+  color: #390148 !important;
+}
+
+.text-1star {
+  color: #051039 !important;
+}
+
+.text-2star {
+  color: #320707 !important;
+}
+
+.text-3star {
+  color: #06340b !important;
+}
+
+.text-master {
+  color: #9d610f !important;
+}
+
+.text-pearl {
+  color: #43623a !important;
+}
+
+.text-sapphire {
+  color: #010cd2 !important;
+}
+
+.text-diamond {
+  color: #b9292c !important;
+}
+
+.text-norank {
+  color: #828D99 !important;
+}
+
+#mitradetail .label-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mitradetail .btn.collapsed .label-open {
+  display: flex;
+}
+
+#mitradetail .btn.collapsed .label-collapsed {
+  display: none;
+}
+
+#mitradetail .btn .label-open {
+  display: none;
+}
+
+#mitradetail .btn .label-collapsed {
+  display: flex;
+}
+
+
+.btn-collapse {
+  display: flex;
+  width: 41px;
+  height: 40px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #e4e4e4 !important;
+  color: #600f9d;
+  padding: 0;
+}
+
+.btn-collapse i {
+  top: 0 !important;
+}
+
+.btn-collapse:hover,
+.btn-collapse:focus {
+  background: #d5d5d5 !important;
+  color: #4d0f9d;
+}
+
+
+
+/* ============================================== */
+/* Responsive style                               */
+/* ============================================== */
+@media (max-width: 1199.98px) {
+  html body.navbar-sticky .app-content .content-wrapper {
+    padding: 1rem;
+  }
+
+  .breadcrumbs-top {
+    margin-top: 1.5rem;
+  }
+
+  .breadcrumbs-top>.col-12 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  html body .content .content-wrapper .content-header-title {
+    border: 0;
+  }
+
+  .breadcrumbs-top .breadcrumb-wrapper {
+    padding: 0;
+    margin-top: 0.5rem;
+  }
+
+  /* geneaology */
+  .card-genealogy .card-header {
+    padding: 10px;
+  }
+
+  .card-genealogy .card-header>.card>.row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .card-genealogy .card-header>.card>.row>div {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-genealogy .card-header>.card>.row>div .btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .card-genealogy .card-header>.card>.row>div.col-6 {
+    display: flex;
+    flex-direction: column !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  #genealogy {
+    overflow-x: auto;
+    margin-right: 2rem;
+  }
+}
+
+.main-menu.menu-light .navigation>li ul .active {
+  background: #6f2abb !important;
+}
+
+.main-menu.menu-light .navigation>li ul .active>a {
+  color: #eaffeb !important;
+}
+
+.content-loading {
+  position: fixed;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.7s;
+  z-index: -1;
+}
+
+.loadings {
+  background-color: black !important;
+  z-index: 10000 !important;
+  opacity: .5 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadings>.bx {
+  font-size: 5rem;
+}
+
+body.swal2-height-auto {
+  height: 100vh !important;
+}
+
+/* Member Level Card */
+#url_referral {
+  font-size: 16px;
+  color: #7400A1;
+  font-weight: 500;
+}
+
+.card-level .certificate-frame { display: none;}
+
+#member_level_card .card-frame {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 582px;
+  max-width: 582px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#member_level_card .card-level {
+  height: 370px;
+  width: 530px;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  background-color: #e1f4f8;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.23'%3E%3Cpath fill='%23d8ecef' d='M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z'/%3E%3Cpath fill='%23d0e3e7' d='M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z'/%3E%3Cpath fill='%23c7dbdf' d='M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z'/%3E%3Cpath fill='%23bed3d6' d='M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z'/%3E%3Cpath fill='%23b6cbce' d='M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z'/%3E%3Cpath fill='%23afc6ca' d='M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z'/%3E%3Cpath fill='%23a8c1c6' d='M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z'/%3E%3Cpath fill='%23a2bcc3' d='M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z'/%3E%3Cpath fill='%239bb7bf' d='M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z'/%3E%3Cpath fill='%2394b2bb' d='M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: 50%; */
+
+  background-color: #330055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg fill-opacity='0.99'%3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%2339005e' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23400066' cx='50' cy='100' r='50'/%3E%3Cg fill='%2347006f' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%234e0077' cx='50' cy='200' r='50'/%3E%3Cg fill='%23550080' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235c0088' cx='50' cy='300' r='50'/%3E%3Cg fill='%23640091' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%236c0099' cx='50' cy='400' r='50'/%3E%3Cg fill='%237400a2' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%237d00aa' cx='50' cy='500' r='50'/%3E%3Cg fill='%238500b3' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%238e00bb' cx='50' cy='600' r='50'/%3E%3Cg fill='%239700c4' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a000cc' cx='50' cy='700' r='50'/%3E%3Cg fill='%23aa00d4' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b400dd' cx='50' cy='800' r='50'/%3E%3Cg fill='%23be00e6' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c800ee' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d200f7' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23D0F' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;
+  position: relative;
+}
+
+#member_level_card .card-level h1 { color: #fff; }
+#member_level_card .card-level h5 { color: rgba(255,255,255, 0.75); }
+#member_level_card .card-level .bg-card-level {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent url(../images/emblem/decor.png) center center no-repeat;
+  background-size: 100% 100%;
+}
+
+#member_level_card .card-level .badge-level {
+  display: flex;
+  position: relative;
+  width: 200px;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  margin-top: -35px;
+}
+
+#member_level_card .card-level .badge-level .badge-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  margin-top: -15px;
+}
+
+#member_level_card .card-level .badge-level .badge-icon.lv-mitra { background: transparent url(../images/emblem/emblem-E1.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-startup { background: transparent url(../images/emblem/emblem-E2.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-sapphire { background: transparent url(../images/emblem/emblem-E3.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-ruby { background: transparent url(../images/emblem/emblem-E4.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-pearl { background: transparent url(../images/emblem/emblem-E5.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-emerald { background: transparent url(../images/emblem/emblem-E6.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-diamond { background: transparent url(../images/emblem/emblem-E7.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-blackdiamond { background: transparent url(../images/emblem/emblem-E8.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-crown { background: transparent url(../images/emblem/emblem-E9.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-crownambassador { background: transparent url(../images/emblem/emblem-E10.png) center center no-repeat; background-size: 100% auto; }
+#member_level_card .card-level .badge-level .badge-icon.lv-royalcrownambassador { background: transparent url(../images/emblem/emblem-E11.png) center center no-repeat; background-size: 100% auto; }
+
+
+#member_level_card .card-level .badge-level .badge-img {
+  height: 60px;
+  width: 60px;
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  top: 58px;
+  left: 70.5px;
+  background: #fff;
+  border-radius: 20px;
+}
+#member_level_card .card-level .badge-level .badge-img img {
+  width: 100%;
+  height: auto;
+}
+
+#member_level_card .card-level .desc-level {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 200px);
+  width: 285px;
+  position: relative;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  line-height: normal;
+}
+
+#member_level_card .card-level .desc-level h4.member-name {
+  font-family: 'Tangerine', cursive;
+  color: #e9aa3b;
+  font-weight: bold;
+  font-size: 36px;
+  width: 100%;
+  padding: 0 10px 10px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e5cb9d;
+  text-transform: capitalize!important;
+}
+
+#member_level_card .card-level .desc-level h3.member-bonus {
+  font-weight: 500;
+  font-size: 20px;
+  color: #e5cb9d;
+}
+
+#member_level_card .card-level .desc-level .company-name {
+  color: rgba(255,255,255, 0.75);
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .card-profile {
+    height: auto!important;
+  }
+  #member_level_card .card-frame {
+    width: 100%;
+  }
+  #member_level_card .card-level {
+    height: 600px;
+    padding-top: 30px;
+    overflow: hidden;
+  }
+
+  #member_level_card .card-level .bg-card-level {
+    background-size: 100% 40%;
+    background-repeat: repeat;
+  }
+
+  #member_level_card .card-level .card-body {
+    text-align: center!important;
+    justify-content: center;
+    flex-direction: column!important;
+  }
+
+  #member_level_card .card-level .badge-level {
+    height: 250px;
+  }
+
+  #member_level_card .card-level .desc-level {
+    width: 100%;
+    height: auto;
+    padding-left: 0!important;
+    margin-top: -10px;
+  }
+
+  .card-level .certificate-frame { 
+    margin-top: 10px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.5+100 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
+
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279.98px)  {
+  #member_level_card .card-frame {
+    scale: 0.8;
+    margin-left: -11%;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1400px)  {
+  #member_level_card .card-frame {
+    scale: 0.75;
+    margin-left: -13%;
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1500px)  {
+  #member_level_card .card-frame {
+    scale: 0.95;
+    margin-left: -3.5%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px)  {
+  .card-profile {
+    height: auto!important;
+  }
+}
+
+/* End Member Level Card */
+
+#input_transaction_courier_cost {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #F2F2F2;
+  opacity: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #6a0dad;
+  padding: 0.47rem 0.8rem;
+}
+
+.item-left, .item-right {
+  height: 210px!important;
+}
+/* .item-level { height: 210px!important; } */
+
+/* GENERAL RESPONSIVE */
+
+@media (max-width: 767px) {
+
+  #modal-summary {
+    padding-left: 0!important;
+  }
+
+  #method-note {
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-header, .modal-body, .modal-footer {
+    padding: 1.05rem;
+  }
+
+  .d-md-table-row-group {
+    display: none!important;
+  }
+
+  /* start table responsive */
+  .pagination {
+    justify-content: center;
+    margin-bottom: 1rem!important;
+  }
+  /* end table responsive */
+
+  /* genealogy */
+  .item-left, .item-right {
+    height: 300px!important;
+    /* overflow-y: hidden; */
+  }
+  .item-level { height: 210px!important; }
+  .item-level img {
+    margin: 1rem auto;
+  }
+
+  .netcode { 
+    font-size: 0.75rem!important;
+    height: 25px;
+    display: block;
+    min-height: 25px;
+  }
+
+  .item-level .d-info b, .item-level .d-info span { width: 40%;}
+  .item-level .d-info span { text-align: right;}
+  .item-level .d-info span.separator { width: 10%; text-align: center; }
+
+  .mb-sm-50 {
+    margin-bottom: 0.5rem!important;
+  }
+
+  #input_transaction_courier_cost, #transaction_price_total {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: #F2F2F2;
+    opacity: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #6a0dad;
+    padding: 0.47rem 0.8rem;
+  }
+  
+  #transaction_price_total {
+    margin-top: 0.5rem;
+  }
+
+  .btn-sm-block {
+    width: 100%;
+  }
+}
+.btnExcel {
+  background-color: #0dad4d;
+  color: white!important;
+}
+
+.btnExcel:hover{
+  background-color: #18ff52b2;
+  transition: all ease-in-out .1s;
+}
+
+button.btnExcel span {
+  color: white!important;
+}
+/* END GENERAL RESPONSIVE */
